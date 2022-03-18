@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poxedex</title>
+    <script src="https://kit.fontawesome.com/3bc89bb397.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/pokedex.png">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="assets/logoPokemon.png" alt="logo Pokemon">
+            <h1> - Pokedex</h1>
+        </nav> 
+    </header>
+    <main>
+        <section class="pokedex">
+            <div class="pokedex-left">
+                <div class="pokedex-left-lights">
+                    <div class="circle-white">
+                       <div class="circle-blue"></div> 
+                    </div>
+                    <div class="circle-red">
+                        <div class="circle-red-inner"></div>
+                    </div>
+                    <div class="circle-yellow">
+                        <div class="circle-yellow-inner"></div>
+                    </div>
+                    <div class="circle-yellow">
+                        <div class="circle-yellow-inner"></div>
+                    </div>
+                </div>
+                <div class="pokedex-left-elements">
+                    <div class="photoframe">
+                        <div class="frame">
+                            <img src="assets/pokeball.png" id="imagePokemon">
+                            <h4 id="displayName"></h4>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="buttons-top">
+                            <div class="button-circle"></div>
+                            <div class="button-large"></div>
+                            <div class="button-large2"></div>
+                        </div>
+                        <div class="buttons-right">
+                            <div class="button-vertical"></div>
+                            <div class="button-horizontal"></div>
+                        </div>
+                        <div class="buttons-bottom">
+                            <div class="button-area"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pokedex-center"></div>
+            <div class="pokedex-right">
+                <div class="form-top">
+                    <label>Pokemon:</label>
+                    <input type="text" id="namePokemon" name="namePokemon" placeholder="Ingresa el nombre">
+                    <i onclick="queryPokemon()" class="fa-solid fa-magnifying-glass icon-search"></i>
+                </div>
+                <div class="pokedex-right-info">
+                   <div class="types">
+                       <p>Tipo de pokemon:</p>
+                       <div class="types-container">
+                       </div>
+                   </div> 
+                   <div class="stats">
+                    <p>Estadísticas: </p>
+                    <div class="stats-container">
+                       </div>                    
+                   </div> 
+                   <div class="moves">
+                    <p>Movimientos: </p>
+                       <div class="moves-container">
+                       </div>                    
+                   </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <script src="js/index.js"></script>
+        <p>Creado por Diego Alvarez <a target="_blank" href="https://github.com/DiegoAlvarezGn"><img src="assets/logoGH.png"></a></p>
+        <p>Empleando: <a target="_blank" href="https://pokeapi.co">PokeAPI</a></p>
+    </footer>
+</body>
+</html>
