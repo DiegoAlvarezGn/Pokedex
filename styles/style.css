@@ -181,6 +181,7 @@ footer a{
     margin-right: auto;
 }
 .frame h4{
+    font-size: .8em;
     margin:auto;
     text-align: center;
 }
@@ -231,9 +232,18 @@ footer a{
 .button-area{
     background-color: #55ab62;
     border-radius: 10px;
-    width: 70%;
+    width: 90%;
     height: 90%;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.button-area p{
+    width: 100%;
+    margin: auto;
+    font-size: 11px;
+    color: #194910;
 }
 .buttons-right{
     float: right;

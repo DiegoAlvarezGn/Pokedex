@@ -13,9 +13,12 @@ async function getPokemon(name) {
 async function getInformation(name){
     let pokemon = {}
     let information = await getPokemon(name);
+    console.log(information);
 
     pokemon.name = information.name;
-
+    pokemon.id = information.id;
+    pokemon.weight = information.weight;
+    pokemon.height = information.height;
     pokemon.image = information.sprites.front_default;
 
     pokemon.types = []
@@ -55,10 +58,9 @@ async function queryPokemon() {
         notFound();
         return;
     }
-    console.log(pokemon);
     
     document.getElementById("imagePokemon").src=pokemon.image.toString();
-    document.getElementById("displayName").innerHTML=pokemon.name.toString();
+    document.getElementById("displayName").innerHTML= `#${pokemon.id}-${pokemon.name}`;
 
     let htmlForTypes = '';
     for(i=0;i<pokemon.types.length;i++){
@@ -85,14 +87,23 @@ async function queryPokemon() {
         htmlForMoves +=htmlSegment;
     }
 
+    let htmlForMeasures = '';
+    htmlForMeasures = `<p>Peso: ${pokemon.weight/10}kg</p>
+                       <p>Altura: ${pokemon.height/10}10m</p>`;
+
     let typesContainer = document.querySelector('.types-container');
     typesContainer.innerHTML = htmlForTypes;
+
+    let measuresContainer = document.querySelector('.button-area');
+    measuresContainer.innerHTML = htmlForMeasures;
     
     let statsContainer = document.querySelector('.stats-container');
     statsContainer.innerHTML = htmlForStats;    
 
     let movesContainer = document.querySelector('.moves-container');
     movesContainer.innerHTML = htmlForMoves;
+
+    
 }
 
 const notFound = () => {
@@ -100,6 +111,9 @@ const notFound = () => {
     document.getElementById("displayName").innerHTML='error :c';
     let typesContainer = document.querySelector('.types-container');
     typesContainer.innerHTML = '';
+
+    let measuresContainer = document.querySelector('.button-area');
+    measuresContainer.innerHTML = '';
     
     let statsContainer = document.querySelector('.stats-container');
     statsContainer.innerHTML = '';    
